@@ -1,60 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.zackeryrobinson.placedetails.MainActivity">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:id="@+id/details">
+        android:orientation="vertical">
+
         <TextView
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mobile Apps Company"
             android:layout_margin="10dp"
-            android:id="@+id/tvPlaceName"/>
+            android:text="Mobile Apps Company" />
+
         <TextView
+            android:id="@+id/tv_formatted_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3301 Windy Ridge Pkwy SE, Atlanta, GA, 30339"
-            android:id="@+id/tvPlaceAddress"/>
+            android:text="3301 Windy Ridge Pkwy SE, Atlanta, GA, 30339" />
+
         <TextView
+            android:id="@+id/tv_formatted_phone_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(770)467-2777"
-            android:id="@+id/tvPlacePhoneNumber"/>
+            android:text="(770)467-2777" />
+
         <TextView
+            android:id="@+id/tv_website"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="http://mobileappscompany.com/"
-            android:id="@+id/tvPlaceWebsite"/>
+            android:text="http://mobileappscompany.com/" />
+
+        <TextView
+            android:id="@+id/tv_open_now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="9am-5pm" />
+
+        <TextView
+            android:id="@+id/tv_price_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$60000" />
 
     </LinearLayout>
 
     <Button
-        android:text="Open with google Maps"
-        android:id="@+id/navigation"
-        android:layout_below="@+id/details"
+        android:id="@+id/btn_to_maps"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:layout_below="@+id/details"
+        android:text="Open with google Maps" />
 
-    <android.support.v4.view.ViewPager
-        xmlns:tools="http://schemas.android.com/tools"
+    <android.support.v4.view.ViewPager xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/pager"
-        android:layout_below="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/btn_to_maps"
         tools:context=".MainActivity" />
-
-
-
 
 
 </RelativeLayout>
