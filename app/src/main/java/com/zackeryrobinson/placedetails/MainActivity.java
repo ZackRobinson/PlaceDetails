@@ -6,12 +6,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a DummySectionFragment (defined as a static inner class
             // below) with the page number as its lone argument.
-            Fragment fragment = new SectionFragment();
+            Fragment fragment = new SectionFragment1();
             Bundle args = new Bundle();
-            args.putInt(SectionFragment.ARG_SECTION_NUMBER, position + 1);
+            args.putInt(SectionFragment1.ARG_SECTION_NUMBER, position + 1);
             fragment.setArguments(args);
             return fragment;
         }
@@ -77,28 +77,29 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * A dummy fragment representing a section of the app, but that simply displays dummy text.
-     * This would be replaced with your application's content.
-     */
-    public static class SectionFragment extends Fragment {
+
+    public static class SectionFragment1 extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
          */
         public static final String ARG_SECTION_NUMBER = "section_number";
+        private static final String TAG = "SectionFrag1Tag";
 
-        public SectionFragment() {
+        public SectionFragment1() {
+            Log.d(TAG, "SectionFragment1: ");
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            TextView dummyTextView = (TextView) rootView.findViewById(R.id.section_label);
-            dummyTextView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+            View rootView = inflater.inflate(R.layout.image_fragment_1, container, false);
+            TextView textView1 =  rootView.findViewById(R.id.section_label);
+            textView1.setText("hi" + Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
     }
+
+
 
 }
